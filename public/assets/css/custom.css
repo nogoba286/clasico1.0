@@ -1,0 +1,706 @@
+body {
+    background-color: #5a04e5;
+    margin: 0;
+}
+
+/* Make the scrollbar thinner */
+::-webkit-scrollbar {
+    width: 6px; /* Adjust width */
+    height: 6px; /* Adjust height for horizontal scrollbars */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+/* Handle (scroll thumb) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #5a04e5, #8c52ff); /* Gradient effect */
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #8c52ff, #b084ff);
+}
+
+#loadingModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 9999;
+}
+#loadingModalContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-outline-primary:hover{
+    background-color: #5a04e5 !important;
+}
+.btn-outline-primary{
+    outline: none;
+    border: none;
+    color:#5a04e5;
+}
+header {
+    background-color: #5a04e5;
+}
+
+.custom-logo {
+    width: 176px;
+}
+.content-container{
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.span-input {
+    background-color: white;
+    padding: 1px 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    gap: 5px;
+    width: 160px;
+    height: 26px;
+    font-size: 14px; /* More specific font-size */
+    border-radius: 100px;
+}
+
+.span-input .input-field {
+    width: 120px;
+    border: none;
+    height: 25px;
+    font-size: 14px; /* Matching font size */
+}
+
+.span-input .input-field:focus {
+    border: none;
+    outline: none;
+}
+
+.span-input i {
+    font-size: 10px; /* Consistent icon size */
+    background-color: #636363;
+    padding: 4px;
+    border-radius: 100%;
+    width: 20px;
+    text-align: center;
+    height: 20px;
+    color: white;
+    cursor: pointer; /* Add cursor style for interactivity */
+}
+
+.nav-item a {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: #ffb800;
+}
+
+.auth-form {
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.auth-form button {
+    width: auto;
+    font-size: 11px;
+    text-align: center;
+    height: 30px;
+    border-radius: 100px;
+    cursor: pointer; /* Add cursor style for interactivity */
+}
+
+#languageMenuButton {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.dropdown-toggle::after {
+    color: white;
+}
+
+.language-menu {
+    min-width: 60px !important;
+}
+
+.language-menu li {
+    width: 50px;
+}
+.navbar-toggler{
+    border: 1px solid white;
+    outline: none !important;
+}
+.navbar-toggler i{
+    color: white;
+}
+.auth-button{
+    font-size: 12px;
+    height: 32px;
+    width: auto;
+    border-radius: 100px;
+    display: none;
+}
+
+.icon-live{
+    padding: 2px 4px;
+    background: rgb(248, 0, 0);
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-width: 0px;
+    border-color: rgb(248, 0, 0);
+    border-style: solid;
+    border-radius: 4px;
+    font-family: Sora, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 12px;
+    width: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.favourite-dropdown li .dropdown-item{
+    background-color: white;
+}
+
+.content{
+    padding: 5px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+}
+.tools{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 350px;
+}
+
+.custom-dialog{
+    background-color: white;
+    border-radius: 5px;
+    padding : 5px;
+    width: 230px;
+    gap: 1rem;
+}
+.custom-dropdown-button{
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border:none;
+    outline: none;
+}
+.custom-dropdown-button:hover{
+    border-radius: 5px;
+    border:none;
+    outline: none;
+}
+.custom-dropdown-icon{
+    font-size: 12px;
+}
+.custom-dropdown-menu{
+    display: none;
+    overflow: hidden;
+    list-style-type: none;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.custom-dropdown-menu li{
+    margin-top: 10px;
+    color: #5a04e5;
+}
+.show{
+    display: block;
+}
+.dropdown-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dropdown-item img{
+    width: 30px;
+}
+.category-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-nav button{
+    width: 27%;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.custom-searchbar{
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #5a04e5;
+    border: none;
+    outline: none;
+    width: 230px;
+}
+.custom-searchbar input{
+    border: none;
+    outline: none;
+    font-size: smaller;
+    width: 100%;
+}
+
+.custom-searchbar input:focus{
+    border: none;
+}
+
+.btn-weekday{
+    background-color: lightgray;
+    font-size: small;
+    width: 14%;
+    height: 33px;
+    overflow: hidden;
+}
+.btn-weekday:hover{
+    color: white;
+    border: 1px solid white;
+}
+.weekdays{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper-container {
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* Adjust based on content */
+}
+
+.sport-type-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    width: 100px;
+    overflow: hidden;
+}
+.custom-event-item{
+    padding: 10px;
+    width: 290px !important;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.custom-event-item div{
+    text-overflow: ellipsis;
+}
+.my-bets{
+    display: flex;
+    gap: 10px;
+}
+.custom-event-item span{
+    font-size: smaller;
+}
+.custom-event-item:hover{
+    cursor: pointer;
+}
+.number-inputer-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.number-buttons{
+    margin-top: 10px;
+}
+.number-buttons button{
+    width: 18%;
+}
+.number-inputer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.teams span{
+    font-weight: bold;
+}
+.teams{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.teams div{
+    display: flex;
+    flex-direction: column;
+}
+.btn-secondary{
+    background-color: lightgray !important;
+    width: 31%;
+    color: rgb(37, 37, 37);
+    border: none;
+}
+.btn-secondary:hover{
+    background-color: #5a04e5 !important;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.favourite-dropdown li .dropdown-item span{
+    font-size: 12px;
+}
+
+.custom-long-dialog{
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+}
+.custom-event-long-item{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    margin-top: 5px;
+}
+.custom-event-long-item:hover{
+    cursor: pointer;
+    background-color: #8b8b8b;
+    color: white;
+}
+.custom-event-long-item .betting-info{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.custom-event-long-item .event-info{
+    width: 30%;
+}
+.custom-long-dialog .nav-link{
+    color: #5a04e5;
+}
+/* Scrollable List */
+.scroll-list {
+    display: flex;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* List Items */
+.scroll-list li {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    background: lightgray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.scroll-list li:hover {
+    transform: scale(1.05);
+}
+
+/* Links */
+.scroll-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.overview {
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.sport-icon {
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+}
+.nav-item a{
+    text-overflow: ellipsis;
+}
+.live-now-content, .upcoming-content{
+    margin-top: 10px;
+}
+.event-info .live-staus, .home-team, .away-team{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.dialog-title{
+    color: #5a04e5;
+    font-weight: bold;
+    font-size: 20px;
+}
+.event-info span{
+    font-size: 13px;
+    font-weight: bold;
+}
+.betting-info .league-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.betting-info .betting-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tools .custom-dialog{
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100% !important;
+}
+.tools .custom-dialog span{
+    color: #5a04e5;
+    font-weight: bold;
+}
+.betslip{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.register{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #6320cf;
+    padding-top: 20px;
+}
+
+.card {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ffcc00;
+}
+
+.category-back-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.category-back-buttons .btn-secondary{
+    width: auto;
+}
+
+.category-back-buttons .btn-secondary:hover{
+    background-color: #7c37ec;
+    color: white;
+    border: 1px solid white;
+}
+
+.match-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.match-info img{
+    width: 50px;
+}
+
+.odds-detail{
+    display: none;
+}
+.event-list{
+    display: none;
+}
+
+.bet-details{
+    margin-top: 10px;
+}
+
+.bet-details .custom-long-dialog{
+    margin-top: 10px;
+}
+.custom-long-dialog .betting-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+}
+.custom-long-dialog .betting-item button{
+    width: 100%;
+}
+
+.btn-betting-item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(196, 196, 196);
+}
+.btn-betting-item:hover{
+    background-color: #5a04e5;
+    color: white;
+}
+
+.match-info .goal-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.match-info .home-team, .match-info .away-team{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.betted-item{
+    background-color: #f8e6e6;
+}
+
+.betted-item .event-info button{
+    background: none;
+    border:none;
+    outline: none;
+}
+
+.betted-item .event-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.betted-item .betted-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.betted-item span{
+    font-size: smaller;
+    color: #5a04e5;
+}
+.tools .custom-dialog i{
+    color: #333;
+}
+@media only screen and (max-width: 1710px) {
+    /* body {
+        background-color: lightblue;
+    } */
+    .auth-form {
+        display: none;
+    }
+    .auth-button{
+        display: block;
+    }
+    .navbar-content{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    /* body {
+        background-color: lightblue;
+    } */
+    .tools{
+        display: none;
+    }
+    .weekdays{
+        display: none;
+    }
+}
+
